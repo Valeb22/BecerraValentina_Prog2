@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>CRUD SPRING BOOT</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h2 class="text-center mt-4">Generar un nuevo parte</h2>
+		<div class="card mx-auto" style="max-width: 500px;">
+			<div class="card-header text-center">
+				<h3>SIMIT (Bogotá D.C)</h3>
+			</div>
+			<div class="card-body">
+				<form th:action="@{/save}" th:object="${parte}" method="POST"
+					action="">
+					<div class="form-group">
+						<label>ID</label> <input type="text" th:field="*{id}"
+							class="form-control" readonly="readonly" />
+						<div th:if="${#fields.hasErrors('id')}" th:errors="*{id}"
+							class="text-danger"></div>
+					</div>
+					<div class="form-group">
+						<label>Fecha (YYYY-MM-DD HH:mm:ss)</label> <input
+							th:field="*{fecha}" type="text" id="fecha" class="form-control">
+						<div th:if="${#fields.hasErrors('fecha')}" th:errors="*{fecha}"
+							class="text-danger"></div>
+					</div>
+					<div class="form-group">
+						<label>Placa</label> <input th:field="*{placa}" type="text"
+							class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Ubicación</label> <input th:field="*{ubicacion}"
+							type="text" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Dueño</label> <input th:field="*{dueno}" type="text"
+							class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Código</label> <select id="codigo" name="codigo"
+							class="form-control">
+							<option value="A10">A10</option>
+							<option value="A12">A12</option>
+							<option value="A5">A5</option>
+							<option value="B11">B11</option>
+							<option value="B2">B2</option>
+							<option value="B22">B22</option>
+							<option value="B21">B21</option>
+							<option value="B3">B3</option>
+							<option value="B7">B7</option>
+							<option value="C1">C1</option>
+							<option value="C14">C14</option>
+							<option value="C19">C19</option>
+							<option value="C2">C2</option>
+							<option value="C28">C28</option>
+							<option value="C29">C29</option>
+							<option value="C30">C30</option>
+							<option value="C32">C32</option>
+							<option value="C37">C37</option>
+							<option value="C5">C5</option>
+							<option value="C6">C6</option>
+							<option value="C7">C7</option>
+							<option value="D10">D10</option>
+							<option value="D15">D15</option>
+							<option value="D16">D16</option>
+							<option value="D3">D3</option>
+							<option value="D4">D4</option>
+							<option value="D5">D5</option>
+							<option value="D8">D8</option>
+							<option value="E4">E4</option>
+							<option value="F">F</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Valor</label> <input id="valor" name="valor" type="text"
+							class="form-control" readonly>
+					</div>
+					<div class="form-group">
+						<label>Descripción</label>
+						<textarea id="descripcion" name="descripcion" class="form-control"
+							readonly></textarea>
+					</div>
+					<input type="submit" value="Guardar" class="btn btn-success" /> 
+					<a th:href="@{/}" class="btn btn-secondary">Regresar</a>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="/js/codigos.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página de Inicio</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+.centered {
+	text-align: center;
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 20px;
+}
+
+.button-container .btn {
+	margin: 10px;
+	flex-basis: 200px;
+}
+</style>
+</head>
+<body>
+
+	<!-- Barra de navegación -->
+	<nav class="navbar navbar-light bg-light">
+		<span class="navbar-brand mb-0 h1"> SIMIT(Bogotá D.C)</span>
+	</nav>
+
+	<h1 class="centered">SIMIT(Bogotá D.C)</h1>
+	<h5>ㅤ</h5>
+	<h4 class="centered">El SIMIT es el Sistema Integrado de
+		Información sobre multas y sanciones por infracciones de tránsito nivel Bogotá D.C.</h4>
+	<h6 class="centered">Según el artículo 2 del Código Nacional de
+		Tránsito, el comparendo es una orden formal de notificación para que
+		el presunto contraventor o implicado se presente ante la autoridad de
+		tránsito por la comisión de una infracción. Aquí podrá generar un nuevo comparendo, listar los comparendos, consultar con
+		la placa del vehículo los comparendos que tenga
+		pendientes y generar pdfs</h6>
+
+	<!-- Contenido de la página -->
+	<div class="container mt-4">
+		<div class="button-container">
+			<!-- Botón "Generar Parte" -->
+			<a th:href="@{/new}" class="btn btn-primary btn-lg">Generar Parte</a>
+
+			<!-- Botón "Lista de Partes" -->
+			<a th:href="@{/listar}" class="btn btn-warning btn-lg">Lista de
+				Partes</a>
+
+			<!-- Botón "Consultar" -->
+			<a th:href="@{/buscar}" class="btn btn-success btn-lg">Consultar
+				Partes</a>
+
+			<!-- Botón "Generar PDFs" -->
+			<a href="/generar-pdf" class="btn btn-danger btn-lg">Generar PDFs</a>
+		</div>
+	</div>
+	
+	<div class="text-center mt-4">
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDU3NzA3NWFiZDkzZWI5ZGVkOWUzZDYxYTBjOTI0YjIzNzJhMTIwMiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/UsG9yuWb5L2aglPCSf/giphy.gif" alt="Carro" width="460" height="240">
+
+    </div>
+
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

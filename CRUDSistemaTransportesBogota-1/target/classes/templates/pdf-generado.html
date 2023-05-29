@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de PDFs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+          crossorigin="anonymous">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #btnSumaPartes {
+            background-color: #5BA5EA;
+            color: #fff;
+            border: none;
+        }
+
+        #btnPartesPorNombre {
+            background-color: #F9A825;
+            color: #fff;
+            border: none;
+        }
+
+        #btnVehiculosConPartes {
+            background-color: #E53935;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Generador de PDFs</h1>
+     <h4>Una vez dado click revisa tu carpeta de pdf en el proyecto (src/main/resources/pdf) y encontraras tu pdf ya generado. </h4> 
+    <button id="btnSumaPartes" class="btn btn-primary" onclick="generarPDFSumaPartes()">Suma total de los Partes</button>
+    <button id="btnPartesPorNombre" class="btn btn-warning" onclick="generarPDFPartesPorNombre()">Partes por Nombre</button>
+    <button id="btnVehiculosConPartes" class="btn btn-danger" onclick="generarPDFVehiculosConPartes()">Vehículos con Partes</button>
+    <a th:href="@{/}" class="btn btn-success">Regresar</a>
+</div>
+
+<script>
+    function generarPDFSumaPartes() {
+        window.location.href = "/generar-pdf";
+    }
+
+    function generarPDFPartesPorNombre() {
+        window.location.href = "/generar-pdf-partes-por-nombre";
+    }
+
+    function generarPDFVehiculosConPartes() {
+        window.location.href = "/generar-pdf-vehiculos-con-partes";
+    }
+</script>
+</body>
+</html>
