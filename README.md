@@ -18,7 +18,7 @@ Este proyecto es un sistema de gestión de partes que permite realizar el seguim
 
 ## Diagrama de clases 
 
-
+<img src="https://github.com/Valeb22/BecerraValentina_Prog2/blob/main/PF%20UML.png">
 
 
 ### Built with
