@@ -14,7 +14,7 @@ Este proyecto es un sistema de gestión de partes que permite realizar el seguim
 - Uso de base de datos MySQL Workbench
 
 ## Tutorial 
-
+https://youtu.be/l40hgizqPTs
 
 ## Diagrama de clases 
 
